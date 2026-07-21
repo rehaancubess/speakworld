@@ -60,7 +60,8 @@ Speakworld was built through an iterative human–AI development workflow in Cod
 - **Game engineering:** implemented third-person movement, camera behavior, collision, mission progression, minimap navigation, NPC markers, trains, metro/subway behavior, bicycles, and scooters.
 - **OpenAI voice systems:** designed the secure server-side Realtime handshake, multilingual NPC role-play prompts, voice casting, semantic turn-taking, subtitles, time/reply limits, and text fallback.
 - **Tutorial audio:** built a one-time TTS generation and manifest pipeline so the guide lessons are generated once and reused for every player instead of creating a new API call each time.
-- **Visual and gameplay QA:** used Codex-driven browser tests, screenshots, movement checks, collision checks, and mission/voice architecture tests to find and fix regressions throughout development.
+- **Computer Use:** extensively used Codex's Computer Use capabilities to operate and inspect the project in Chrome and Blender, navigate the playable worlds, compare visual results with references, capture screenshots, and test changes as a player would.
+- **Visual and gameplay QA:** combined those Computer Use sessions with Codex-driven browser tests, screenshots, movement checks, collision checks, and mission/voice architecture tests to find and fix regressions throughout development.
 - **Documentation and release:** used Codex to audit the public repository for secrets and oversized generated files, document setup and architecture, run the release checks, and prepare the GitHub submission.
 
 The human creator set the product direction, chose the art and gameplay references, made the final design calls, supplied/licensed source assets, and play-tested each iteration. GPT-5.6 helped turn that direction into working, tested code and assets.
