@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "guide": "Asha",
+  "disclosure": "AI-generated voice",
+  "model": "gpt-4o-mini-tts",
+  "voice": "marin",
+  "generated": [
+    {
+      "lessonId": "greeting",
+      "file": "asha/greeting.mp3"
+    },
+    {
+      "lessonId": "food",
+      "file": "asha/food.mp3"
+    },
+    {
+      "lessonId": "shop",
+      "file": "asha/shop.mp3"
+    },
+    {
+      "lessonId": "pharmacy",
+      "file": "asha/pharmacy.mp3"
+    },
+    {
+      "lessonId": "directions",
+      "file": "asha/directions.mp3"
+    },
+    {
+      "lessonId": "train",
+      "file": "asha/train.mp3"
+    },
+    {
+      "lessonId": "ride_scooter",
+      "file": "asha/ride_scooter.mp3"
+    },
+    {
+      "lessonId": "read_sign",
+      "file": "asha/read_sign.mp3"
+    },
+    {
+      "lessonId": "board_transit",
+      "file": "asha/board_transit.mp3"
+    },
+    {
+      "lessonId": "reach_far_district",
+      "file": "asha/reach_far_district.mp3"
+    }
+  ]
+}

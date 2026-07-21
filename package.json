@@ -1,0 +1,26 @@
+{
+  "name": "speakworld",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "audio:generate:hindi": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --world=hindi",
+    "audio:generate:japanese": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --world=japanese",
+    "audio:generate:spanish": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --world=spanish",
+    "audio:generate:all": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --all",
+    "test:voice": "node scripts/voice-architecture-test.mjs",
+    "test:voice:ui": "node scripts/voice-ui-test.mjs",
+    "test:onboarding": "node scripts/first-lesson-autoplay-test.mjs",
+    "test:soundscape": "node scripts/soundscape-test.mjs"
+  },
+  "dependencies": {
+    "three": "^0.179.1"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.61.1",
+    "vite": "^7.0.5"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "guide": "Lola",
+  "disclosure": "AI-generated voice",
+  "model": "gpt-4o-mini-tts",
+  "voice": "coral",
+  "generated": [
+    {
+      "lessonId": "greeting",
+      "file": "lola/greeting.mp3"
+    },
+    {
+      "lessonId": "food",
+      "file": "lola/food.mp3"
+    },
+    {
+      "lessonId": "shop",
+      "file": "lola/shop.mp3"
+    },
+    {
+      "lessonId": "directions",
+      "file": "lola/directions.mp3"
+    },
+    {
+      "lessonId": "train",
+      "file": "lola/train.mp3"
+    },
+    {
+      "lessonId": "pharmacy",
+      "file": "lola/pharmacy.mp3"
+    },
+    {
+      "lessonId": "ride_bicycle",
+      "file": "lola/ride_bicycle.mp3"
+    },
+    {
+      "lessonId": "read_sign",
+      "file": "lola/read_sign.mp3"
+    },
+    {
+      "lessonId": "board_transit",
+      "file": "lola/board_transit.mp3"
+    },
+    {
+      "lessonId": "reach_far_district",
+      "file": "lola/reach_far_district.mp3"
+    }
+  ]
+}

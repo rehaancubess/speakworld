@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#67c5ce" />
+    <meta
+      name="description"
+      content="Speakworld — learn Hindi, Japanese and Spanish through playable journeys."
+    />
+    <title>Speakworld · Learn the world by living it</title>
+  </head>
+  <body>
+    <main id="app">
+      <canvas id="game" aria-label="Speakworld playable language-learning world" tabindex="0"></canvas>
+
+      <section id="world-select" class="world-select" aria-label="Choose a language world">
+        <div class="world-select__brand" aria-label="Speakworld">
+          <span>S</span><strong>Speakworld</strong><small>Learn by living it</small>
+        </div>
+        <div class="world-select__globe" aria-hidden="true">
+          <span class="world-select__land world-select__land--india">न</span>
+          <span class="world-select__land world-select__land--japan">あ</span>
+          <span class="world-select__land world-select__land--mexico">ñ</span>
+          <i></i><i></i><i></i>
+        </div>
+        <div class="world-select__content">
+          <span class="world-select__eyebrow">Your next language quest</span>
+          <h1>Which language do you want to learn?</h1>
+          <p>Enter a living country, complete ten missions, travel its roads and railways, and learn by talking to the people you meet.</p>
+          <div class="world-select__choices">
+            <button class="world-choice world-choice--india" type="button" data-world="hindi">
+              <span class="world-choice__script">न</span>
+              <span class="world-choice__copy"><small>India · भारत</small><strong>Hindi</strong><em>Nimbu Pradesh · 10 missions</em></span>
+              <span class="world-choice__arrow">→</span>
+            </button>
+            <button class="world-choice world-choice--japan" type="button" data-world="japanese">
+              <span class="world-choice__script">あ</span>
+              <span class="world-choice__copy"><small>Japan · 日本</small><strong>Japanese</strong><em>Aozora Japan · 10 missions</em></span>
+              <span class="world-choice__arrow">→</span>
+            </button>
+            <button class="world-choice world-choice--mexico" type="button" data-world="spanish">
+              <span class="world-choice__script">ñ</span>
+              <span class="world-choice__copy"><small>Mexico · México</small><strong>Spanish</strong><em>Valle Naranja · 10 missions</em></span>
+              <span class="world-choice__arrow">→</span>
+            </button>
+          </div>
+          <small class="world-select__note">30 missions across 3 worlds · live voice practice in every language · text fallback always available</small>
+        </div>
+      </section>
+
+      <header class="brand">
+        <span id="brand-mark" class="brand__mark">न</span>
+        <span><strong>Speakworld</strong><small id="brand-subtitle">Walk into Hindi</small></span>
+      </header>
+
+      <div id="location-chip" class="location-chip" aria-live="polite">Nimbu Road Station</div>
+
+      <div id="objective-navigator" class="objective-navigator" aria-live="polite">
+        <span id="objective-arrow" class="objective-navigator__arrow" aria-hidden="true">↑</span>
+        <span class="objective-navigator__copy">
+          <strong id="objective">Asha’s tutorial · greet someone politely</strong>
+          <small id="objective-distance">Open the lesson, then follow the arrow</small>
+        </span>
+      </div>
+
+      <div id="target-marker" class="target-marker" aria-hidden="true">
+        <span>!</span><strong id="target-marker-label">NEXT</strong>
+      </div>
+
+      <aside class="world-status" aria-label="World status">
+        <button id="lesson-status" class="world-status__missions" type="button" aria-label="View all missions" aria-expanded="false">
+          <span id="lesson-status-label">Mission 1/10</span><small>View all</small>
+        </button>
+        <span id="mode-status">Text practice</span>
+        <span id="transport-status">On foot</span>
+      </aside>
+
+      <section id="mission-board" class="mission-board" aria-label="All missions" aria-hidden="true">
+        <div class="mission-board__card">
+          <header>
+            <span><small id="mission-board-kicker">Hindi journey</small><strong>All missions</strong></span>
+            <button id="mission-board-close" type="button" aria-label="Close mission list">×</button>
+          </header>
+          <div class="mission-board__content">
+            <nav id="mission-list" class="mission-list" aria-label="Mission list"></nav>
+            <aside class="mission-detail" aria-live="polite">
+              <small id="mission-detail-status">Current mission</small>
+              <strong id="mission-detail-title">Greet someone politely</strong>
+              <p id="mission-detail-context">Meet Ravi near Nimbu Junction and practise a polite greeting.</p>
+              <div><span id="mission-detail-native">नमस्ते!</span><small id="mission-detail-english">Hello!</small></div>
+              <p id="mission-detail-destination">Destination: Ravi near Nimbu Junction</p>
+              <button id="mission-detail-action" type="button">Open Asha’s lesson</button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <button id="guide-help" class="guide-help" type="button">
+        <img id="guide-help-avatar" src="/assets/guides/asha.png" alt="Asha, your Hindi guide" /><strong>Asha’s tip</strong>
+      </button>
+
+      <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Mute music and sounds" aria-pressed="false">
+        <span aria-hidden="true">♪</span><strong>Music & sounds on</strong>
+      </button>
+
+      <section id="guide-card" class="tutorial-panel" aria-label="Asha's Hindi tutorial" aria-hidden="true">
+        <div class="tutorial-panel__card">
+          <header class="guide-card__header">
+            <img id="guide-avatar" class="guide-card__avatar" src="/assets/guides/asha.png" alt="Asha, your Hindi guide" />
+            <span><small>Asha · your Hindi guide</small><strong id="guide-title">Greet someone politely</strong></span>
+          </header>
+          <p id="guide-message">Start every interaction warmly. Asha will show you the useful phrase before you practise it.</p>
+          <div class="guide-context"><small>Your situation</small><p id="guide-context">You have just arrived at Nimbu Junction and meet a friendly local.</p></div>
+          <div class="guide-card__phrase">
+            <small>Useful sentence</small>
+            <strong id="guide-hindi">नमस्ते! आप कैसे हैं?</strong>
+            <span id="guide-romaji" class="guide-card__romaji" hidden></span>
+            <span id="guide-english">Hello! How are you?</span>
+          </div>
+          <section class="guide-phrase-kit" aria-labelledby="guide-phrase-kit-title">
+            <header><strong id="guide-phrase-kit-title">Remember these before you go</strong><small id="guide-phrase-languages">Hindi · English</small></header>
+            <div id="guide-phrase-list" class="guide-phrase-list"></div>
+          </section>
+          <div class="guide-narration">
+            <button id="guide-listen" type="button" aria-pressed="false" hidden>Listen to Asha</button>
+            <small id="guide-audio-status">Tutorial text · narration assets have not been generated yet</small>
+          </div>
+          <footer><span id="guide-progress">0 of 10 missions complete</span><strong id="guide-next">Next: practise with Ravi</strong></footer>
+          <button id="guide-start" class="tutorial-panel__start" type="button">Got it · show me where to go</button>
+        </div>
+      </section>
+
+      <div id="notification" class="notification" aria-live="polite"></div>
+
+      <aside id="dialogue" class="dialogue" aria-live="polite">
+        <span class="dialogue__label">Hindi phrase</span>
+        <strong id="dialogue-hindi">नमस्ते!</strong>
+        <span id="dialogue-romaji" class="dialogue__romaji" hidden></span>
+        <span id="dialogue-english">Hello!</span>
+      </aside>
+
+      <section id="practice-panel" class="practice-panel" aria-label="Hindi conversation practice" aria-hidden="true">
+        <div class="practice-panel__card">
+          <header>
+            <span><small>Practice conversation</small><strong id="practice-role">Local shopkeeper</strong></span>
+            <button id="practice-close" class="practice-panel__close" type="button" aria-label="Close conversation">×</button>
+          </header>
+          <p id="practice-context" class="practice-context">Use the phrases Asha taught you to complete this real-world situation.</p>
+          <div class="practice-npc">
+            <span class="practice-npc__avatar">न</span>
+            <p><strong id="practice-npc-hindi">नमस्ते!</strong><span id="practice-npc-romaji" class="practice-npc__romaji" hidden></span><span id="practice-npc-english">Hello!</span></p>
+          </div>
+          <nav class="practice-modes" aria-label="Practice mode">
+            <button id="practice-mode-voice" type="button">Voice practice</button>
+            <button id="practice-mode-text" type="button">Text practice</button>
+          </nav>
+          <div id="voice-practice" class="voice-practice">
+            <div class="voice-practice__hint">
+              <span>Phrase to try</span>
+              <strong id="voice-hint-native">नमस्ते! मैं ठीक हूँ। आप कैसे हैं?</strong>
+              <small id="voice-hint-english">Hello! I’m well. How are you?</small>
+            </div>
+            <div id="voice-transcript" class="voice-transcript" aria-live="polite">
+              <p class="voice-transcript__empty">Your live subtitles will appear here.</p>
+            </div>
+            <div class="voice-practice__status" aria-live="polite">
+              <strong id="voice-status">Ready when you are</strong>
+              <span><b id="voice-turns">0/6 replies</b><b id="voice-timer">2:30</b></span>
+            </div>
+            <button id="voice-start" class="voice-start" type="button">Start voice practice</button>
+            <button id="voice-mic-toggle" class="voice-mic-toggle" type="button" hidden disabled><span aria-hidden="true"></span>Mic on · click to pause</button>
+            <button id="voice-finish" class="voice-finish" type="button" hidden>Finish & get feedback</button>
+            <button id="voice-use-text" class="voice-use-text" type="button">Use text choices instead</button>
+            <small class="voice-disclosure">AI-generated voice · microphone audio is sent only during this live practice session.</small>
+          </div>
+          <div id="text-practice" class="text-practice">
+            <span class="practice-panel__prompt">Choose what you would say</span>
+            <div id="practice-choices" class="practice-choices"></div>
+          </div>
+          <p id="practice-feedback" class="practice-feedback" aria-live="polite"></p>
+          <button id="practice-continue" class="practice-continue" type="button" hidden>Continue</button>
+          <small id="practice-hint" class="practice-panel__hint">Speak naturally · the NPC listens and replies automatically</small>
+        </div>
+      </section>
+
+      <div id="interaction" class="interaction" aria-live="polite">
+        <kbd>E</kbd>
+        <span id="interaction-text">Interact</span>
+      </div>
+
+      <aside id="mini-map" class="mini-map" aria-label="Local navigation map">
+        <div class="mini-map__viewport">
+          <div id="mini-map-world" class="mini-map__world">
+            <svg viewBox="0 0 600 300" aria-hidden="true">
+              <g id="mini-map-cartography"></g>
+              <path id="mini-map-route" class="mini-map__route" d="" />
+            </svg>
+            <span id="mini-map-waypoint" class="mini-map__waypoint" aria-hidden="true"><span>!</span></span>
+          </div>
+          <span class="mini-map__north" aria-hidden="true">N</span>
+          <span id="mini-map-player" class="mini-map__player" aria-label="Your position"></span>
+        </div>
+        <footer>
+          <strong id="mini-map-place">Nimbu Pradesh</strong>
+          <span id="mini-map-distance">Open Asha’s lesson</span>
+        </footer>
+      </aside>
+
+      <div class="controls" aria-label="Game controls">
+        <div class="controls__keys" aria-hidden="true">
+          <kbd>W</kbd>
+          <kbd>A</kbd>
+          <kbd>S</kbd>
+          <kbd>D</kbd>
+        </div>
+        <p><strong>Explore & practise</strong><span>W/S move · A/D turn · Shift run · Space jump · E talk · M map</span></p>
+      </div>
+
+      <section id="world-map" class="world-map" aria-label="Map of Nimbu" aria-hidden="true">
+        <div class="world-map__card">
+          <header><span><small id="world-map-subtitle">Discover India through Hindi</small><strong id="world-map-title">Nimbu Pradesh</strong></span><kbd>M</kbd></header>
+          <div class="world-map__canvas">
+            <svg viewBox="0 0 600 300" role="img" aria-label="Road and railway map">
+              <g id="world-map-cartography"></g>
+              <path id="mission-route" class="world-map__mission-route" d="" />
+            </svg>
+            <div id="map-markers" class="world-map__markers"></div>
+            <span id="map-player" class="world-map__player" aria-label="Your position"></span>
+          </div>
+          <footer><span>● Road</span><span id="world-map-transit-legend">━ Railway</span><span>The dotted line shows your current lesson</span></footer>
+        </div>
+      </section>
+
+      <div id="loading" class="loading">
+        <span class="loading__mark">न</span>
+        <p>Choose a world to begin</p>
+      </div>
+    </main>
+    <script type="module" src="/src/slice-preview.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "guide": "Yuki",
+  "disclosure": "AI-generated voice",
+  "model": "gpt-4o-mini-tts",
+  "voice": "shimmer",
+  "generated": [
+    {
+      "lessonId": "greeting",
+      "file": "yuki/greeting.mp3"
+    },
+    {
+      "lessonId": "shop",
+      "file": "yuki/shop.mp3"
+    },
+    {
+      "lessonId": "food",
+      "file": "yuki/food.mp3"
+    },
+    {
+      "lessonId": "directions",
+      "file": "yuki/directions.mp3"
+    },
+    {
+      "lessonId": "train",
+      "file": "yuki/train.mp3"
+    },
+    {
+      "lessonId": "pharmacy",
+      "file": "yuki/pharmacy.mp3"
+    },
+    {
+      "lessonId": "ride_bicycle",
+      "file": "yuki/ride_bicycle.mp3"
+    },
+    {
+      "lessonId": "read_sign",
+      "file": "yuki/read_sign.mp3"
+    },
+    {
+      "lessonId": "board_transit",
+      "file": "yuki/board_transit.mp3"
+    },
+    {
+      "lessonId": "reach_far_district",
+      "file": "yuki/reach_far_district.mp3"
+    }
+  ]
+}
