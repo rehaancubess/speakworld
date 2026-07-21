@@ -1,0 +1,25 @@
+.git
+.gitignore
+.gcloudignore
+.env
+.env.*
+!.env.example
+.DS_Store
+.commandai-active
+node_modules
+dist
+blender
+scripts
+videos
+coverage
+playwright-report
+test-results
+*.log
+
+# Only the three current runtime worlds are needed in the container.
+public/assets/*.glb
+!public/assets/nimbu_grand_world.glb
+!public/assets/nimbu_japan_world.glb
+!public/assets/nimbu_mexico_world.glb
+public/assets/reference
+public/assets/speakworld-logo*.png

@@ -4,6 +4,10 @@
   <img src="public/assets/speakworld-logo-v2.png" alt="Speakworld" width="360">
 </p>
 
+<p align="center">
+  <a href="https://speakworld-342475645314.us-central1.run.app/"><strong>Play Speakworld on Google Cloud Run →</strong></a>
+</p>
+
 **Walk into a language.** Speakworld is a single-player Three.js language-learning game where useful conversation practice happens inside explorable, country-specific worlds instead of a lesson list.
 
 Choose India, Japan, or Mexico; meet a local guide; learn a small bilingual phrase set; travel to the right person; and use the phrase in a contextual conversation. Each world has ten missions, local transport, navigation, ambient sound, and its own visual identity.
@@ -146,6 +150,7 @@ src/
   movement-physics.js        movement/collision helpers
   country-ambience.js        per-world procedural music and sound
 server/
+  cloud-run-server.mjs      production static server and Realtime endpoint
   realtime-session.mjs       secure OpenAI session handshake and local limits
   practice-lessons.mjs       multilingual lessons, prompts, and voice casting
   aws-lambda-realtime.mjs    future AWS API Gateway/Lambda adapter
@@ -182,14 +187,17 @@ node scripts/exploration-preview-test.mjs
 
 ## Production deployment
 
-The included Vite middleware is for local development. For an AWS deployment:
+Speakworld is containerized for Google Cloud Run. `server/cloud-run-server.mjs` serves the Vite build, large GLB/audio assets (including range requests), health checks, and the same-origin Realtime session endpoint. The container runs as a non-root user and reads the OpenAI key only from its server environment.
 
-1. Store `OPENAI_API_KEY` in AWS Secrets Manager.
-2. Deploy `server/aws-lambda-realtime.mjs` behind API Gateway.
-3. Require authenticated users before issuing a Realtime session.
-4. Replace the in-memory limiter with DynamoDB or Redis and add AWS WAF limits.
-5. Configure OpenAI project budgets and server-side exercise limits.
-6. Host the static Vite build from `dist/` using S3 + CloudFront or an equivalent service.
+```bash
+gcloud run deploy speakworld \
+  --source . \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --set-secrets OPENAI_API_KEY=speakworld-openai-api-key:1
+```
+
+The checked-in `.gcloudignore` keeps local environments, Blender sources, tests, and video renders out of the build context. In production, grant only the Cloud Run service identity `roles/secretmanager.secretAccessor`, pin the secret to a numbered version, configure instance limits and OpenAI project budgets, and replace the in-memory rate limiter with a shared store if the service grows beyond a controlled demo.
 
 ## Third-party assets
 

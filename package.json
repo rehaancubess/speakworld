@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "node server/cloud-run-server.mjs",
     "preview": "vite preview",
     "audio:generate:hindi": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --world=hindi",
     "audio:generate:japanese": "node --env-file-if-exists=.env.local scripts/generate-guide-tts.mjs --world=japanese",
