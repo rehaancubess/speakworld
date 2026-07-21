@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://speakworld-342475645314.us-central1.run.app/"><strong>Play Speakworld on Google Cloud Run →</strong></a>
+  <a href="https://speakworld-efxs3jiboa-uc.a.run.app/"><strong>Play Speakworld on Google Cloud Run →</strong></a>
 </p>
 
 **Walk into a language.** Speakworld is a single-player Three.js language-learning game where useful conversation practice happens inside explorable, country-specific worlds instead of a lesson list.
