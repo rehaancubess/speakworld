@@ -198,7 +198,3 @@ gcloud run deploy speakworld \
 ```
 
 The checked-in `.gcloudignore` keeps local environments, Blender sources, tests, and video renders out of the build context. In production, grant only the Cloud Run service identity `roles/secretmanager.secretAccessor`, pin the secret to a numbered version, configure instance limits and OpenAI project budgets, and replace the in-memory rate limiter with a shared store if the service grows beyond a controlled demo.
-
-## Third-party assets
-
-Third-party model credits and licenses are recorded in [`blender/source_assets/ATTRIBUTION.md`](blender/source_assets/ATTRIBUTION.md). The Japanese torii gate source asset is licensed under CC BY 4.0 and attributed there.
