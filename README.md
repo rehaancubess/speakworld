@@ -4,10 +4,6 @@
   <img src="public/assets/speakworld-logo-v2.png" alt="Speakworld" width="360">
 </p>
 
-<p align="center">
-  <a href="https://speakworld-efxs3jiboa-uc.a.run.app/"><strong>Play Speakworld on Google Cloud Run →</strong></a>
-</p>
-
 **Walk into a language.** Speakworld is a single-player Three.js language-learning game where useful conversation practice happens inside explorable, country-specific worlds instead of a lesson list.
 
 Choose India, Japan, or Mexico; meet a local guide; learn a small bilingual phrase set; travel to the right person; and use the phrase in a contextual conversation. Each world has ten missions, local transport, navigation, ambient sound, and its own visual identity.
